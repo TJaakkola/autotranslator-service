@@ -1,0 +1,21 @@
+{
+  "name": "translator-service",
+  "version": "1.0.0",
+  "description": "Background service for translator chrome-extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "translate"
+  ],
+  "author": "Tapio Jaakkola",
+  "license": "MIT",
+  "dependencies": {
+    "bingtranslator": "0.0.7",
+    "express": "^4.11.2"
+  },
+  "engines": {
+    "node": "0.10.35"
+  }
+}
