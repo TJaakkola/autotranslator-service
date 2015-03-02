@@ -2,7 +2,7 @@
 //var translator = require('./bing/index');
 
 //var express = require('express');
-//var translator = require('bingtranslator');
+var translator = require('bingtranslator');
 
 console.log('Version: ' + process.version);
 /*
