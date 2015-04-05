@@ -19,7 +19,6 @@ var server = app.listen(app.get('port'), function () {
     var host = server.address().address;
     var port = server.address().port;
     console.log('server started, running at', app.get('port'));
-    console.log('--------------------', credentials);
 });
 
 // REST-API
