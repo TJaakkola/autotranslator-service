@@ -1,7 +1,7 @@
 var express = require('express');
 
 var credentials = {
-    client_id: process.env.CLIEN_ID,
+    client_id: process.env.CLIENT_ID,
     client_secret: process.env.MS_APP_KEY
 };
 
