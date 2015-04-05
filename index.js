@@ -7,7 +7,6 @@ var credentials = {
 
 var translator = require('bing-translate').init(credentials);
 var app = express();
-
 app.set('port', (process.env.PORT || 5000));
 
 app.use(function(req, res, next) {
@@ -19,9 +18,8 @@ app.use(function(req, res, next) {
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address;
     var port = server.address().port;
-
     console.log('server started, running at', app.get('port'));
-
+    console.log('--------------------', credentials);
 });
 
 // REST-API
