@@ -1,11 +1,11 @@
+var express = require('express');
 
-//var translator = require('./bing/index');
+var credentials = {
+    client_id: 'QTranslator',
+    client_secret: 'K0EM7nT7dHFGWZ4lIijNC1IFMtIxQ/HA33PytsTEdYU='
+};
 
-//var express = require('express');
-var translator = require('bingtranslator');
-
-console.log('Version: ' + process.version);
-/*
+var translator = require('bing-translate').init(credentials);
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -16,10 +16,12 @@ app.use(function(req, res, next) {
     next();
 });
 
-var credentials = {
-    clientId: 'QTranslator',
-    clientSecret: 'K0EM7nT7dHFGWZ4lIijNC1IFMtIxQ/HA33PytsTEdYU='
-};
+
+translator.translate('This hotel is located close to the centre of Paris.', 'en', 'fi', function(err, res){
+    console.log(res.response);
+});
+
+
 
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address;
@@ -29,10 +31,9 @@ var server = app.listen(app.get('port'), function () {
 
 });
 
-/* REST-API
+// REST-API
 app.get('/translate', function (req, res) {
-    translator.translate(credentials, req.query.phrase, 'en', 'fi', function (err, data) {
-        res.send(data);
+    translator.translate(req.query.phrase, 'en', 'fi', function (err, data) {
+        res.send(data.translated_text);
     });
 });
-*/

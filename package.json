@@ -12,6 +12,7 @@
   "author": "Tapio Jaakkola",
   "license": "MIT",
   "dependencies": {
+    "bing-translate": "0.0.2",
     "bingtranslator": "0.0.7",
     "express": "^4.11.2"
   },
