@@ -23,6 +23,9 @@ var server = app.listen(app.get('port'), function () {
 });
 
 app.get('/translate', function (req, res) {
+
+    console.log('translated phrase: ', req.query.phrase);
+
     translator.translate(req.query.phrase, 'en', 'fi', function (err, data) {
         res.send(data.translated_text);
     });
