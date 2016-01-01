@@ -1,3 +1,2 @@
-.tmp
+*.iml
 node_modules
-.idea

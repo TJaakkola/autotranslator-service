@@ -19,16 +19,12 @@ app.use(function(req, res, next) {
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address;
     var port = server.address().port;
-    console.log('server started, running at', app.get('port'), 'on host', host);
+    console.log('autotranslator-service started, running at', app.get('port'), 'on host', host);
 });
 
 app.get('/translate', function (req, res) {
-
-    console.log('translated phrase: ', req.query.phrase);
-
-    translator.translate(req.query.phrase, 'en', 'fi', function (err, data) {
-        console.log(data);
-
+    translator.translate(req.query.phrase, req.query.from, req.query.to, function (err, data) {
+        console.log(req.query.phrase, req.query.from, req.query.to);
         res.send(data.translated_text);
     });
 });
