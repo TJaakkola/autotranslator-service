@@ -1,11 +1,11 @@
-var express = require('express');
+const express = require('express');
 
-var credentials = {
+const credentials = {
     client_id: process.env.CLIENT_ID,
     client_secret: process.env.MS_APP_KEY
 };
 
-var translator = require('bing-translate').init(credentials);
+const translator = require('bing-translate').init(credentials);
 const app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -24,7 +24,6 @@ const server = app.listen(app.get('port'), () => {
 
 app.get('/translate', (req, res) => {
     translator.translate(req.query.phrase, req.query.from, req.query.to, function (err, data) {
-        console.log(req.query.phrase, req.query.from, req.query.to);
         res.send(data.translated_text);
     });
 });
